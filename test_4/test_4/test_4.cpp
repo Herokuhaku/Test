@@ -2,10 +2,44 @@
 //
 
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::ifstream ifs("data.txt");
+    std::string str;
+    std::vector<int> num;
+    int check = 0;
+    while (getline(ifs, str))
+    {
+        bool checkbool = false; // 割り切れたらtrue 素数ではない
+        check = std::atoi(str.c_str());
+
+        for (int i = 1; i < check; i++)
+        {
+            if (i != 1 && check % i == 0)
+            {
+                checkbool = true;
+                break;
+            }
+        }
+        if (!checkbool && check > 1)
+        {
+            num.emplace_back(check);
+        }
+    }
+
+    // 出力
+    printf("素数を表示します\n");
+    for (auto no : num)
+    {
+        printf("%d\n",no);
+    }
+
+    system("pause");
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー

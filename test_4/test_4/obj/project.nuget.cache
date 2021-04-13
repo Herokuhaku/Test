@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Md5xvQjUVFxk0HrAXtz4Fq8wj+TQP34hWlMzYgRGG+LZT5nx/WqVgbCAJPUmk27H4YLk9t2FUGwyei12cso3AA==",
+  "success": true,
+  "projectFilePath": "D:\\Users\\1916213\\Desktop\\新しいフォルダー\\Test\\test_4\\test_4\\test_4.fsproj",
+  "expectedPackageFiles": [
+    "D:\\Users\\1916213\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

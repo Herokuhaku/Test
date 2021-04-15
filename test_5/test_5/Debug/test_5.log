@@ -1,2 +1,6 @@
 ﻿  main.cpp
+D:\Users\1916213\Desktop\新しいフォルダー\Test\test_5\test_5\main.cpp(46,27): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+D:\Users\1916213\Desktop\新しいフォルダー\Test\test_5\test_5\main.cpp(74,38): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+D:\Users\1916213\Desktop\新しいフォルダー\Test\test_5\test_5\main.cpp(94,35): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+D:\Users\1916213\Desktop\新しいフォルダー\Test\test_5\test_5\main.cpp(112,43): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
   test_5.vcxproj -> D:\Users\1916213\Desktop\新しいフォルダー\Test\test_5\Debug\test_5.exe

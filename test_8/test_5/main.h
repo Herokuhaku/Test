@@ -7,4 +7,4 @@ int _need = 500;
 // ピック アップ中に引くともらえるピース 90
 int _get = 90;
 // 試行回数
-int _trials = 100000;
+int _trials = 10000;

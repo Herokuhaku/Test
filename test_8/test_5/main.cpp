@@ -8,35 +8,40 @@ void GACHA()
 {
     ClsDrawScreen();
 
-    int count = 0;  // 出た回数
-    int getcount = 0; // 才能開花maxになった回数        
-    for (int i = 0;i < 100000;i++)
+    int count = 0;  // 引いた回数
+    int get = 0;    // 出た回数
+    int getcount = 0; // 才能開花maxになった回数
+    long long int allstone = 0;
+    while (getcount <= _trials)
     {
-        for (int c = 0;c < 10;c++)
+        int tmp = rand() % 200;
+        if (0 == tmp)
         {
-            int tmp = rand() % 1000;
-            if (0 < tmp && tmp <= 5)
-            {
-                count++;
-                getcount++;
-            }
-            if (count == 200)
-            {
-                getcount++;
-                count = 0;
-            }
+            get++;
         }
-    }
-    int m = getcount / 6;
-    int d = 1000000 * 150;
+        if (get == 6)
+        {
+            getcount++;
+            count = 0;
+            get = 0;
+        }
 
-    int all = d / m;
+        if (count == 200)
+        {
+            get++;
+            count = 0;
+        }
+        count++;
+        allstone += 150;
+    }
+
+    int all = allstone / _trials;
     // メジロマックイーンが出る確率 0.500%
     // 星3から星5までに必要なピース 500
     // ピック アップ中に引くともらえるピース 90
     // 試行回数
 
-    DrawFormatString(0, 0, 0xffffff, "才能開花MAXに必要な石の数 %d 個", all);
+    DrawFormatString(0, 0, 0xffffff, "才能開花MAXに必要な石の数 %d 個",all);
     DrawString(0,100,"スペースでもう一度計算し直す",0xffffff);
     ScreenFlip();
 }
@@ -68,7 +73,7 @@ int WINAPI WinMain(
 
 
     std::mt19937 mt;
-    std::uniform_int_distribution<int> shotrand(0, 1000);
+    std::uniform_int_distribution<int> shotrand(1, 200);
 
     GACHA();
     while (ProcessMessage() == 0)

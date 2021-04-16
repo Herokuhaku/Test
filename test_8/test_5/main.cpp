@@ -8,31 +8,40 @@ void GACHA()
 {
     ClsDrawScreen();
 
+    DrawString(0, 100, "計算中", 0xffffff);
+
+    ScreenFlip();
+    ClsDrawScreen();
     int count = 0;  // 引いた回数
     int get = 0;    // 出た回数
     int getcount = 0; // 才能開花maxになった回数
     long long int allstone = 0;
     while (getcount <= _trials)
     {
+        allstone += 150;
         int tmp = rand() % 200;
         if (0 == tmp)
         {
             get++;
-        }
-        if (get == 6)
-        {
-            getcount++;
-            count = 0;
-            get = 0;
+            if (get == 6)
+            {
+                getcount++;
+                count = 0;
+                get = 0;
+            }
         }
 
         if (count == 200)
         {
             get++;
             count = 0;
+            if (get == 6)
+            {
+                getcount++;
+                get = 0;
+            }
         }
-        count++;
-        allstone += 150;
+        count ++;
     }
 
     int all = allstone / _trials;
@@ -41,7 +50,7 @@ void GACHA()
     // ピック アップ中に引くともらえるピース 90
     // 試行回数
 
-    DrawFormatString(0, 0, 0xffffff, "才能開花MAXに必要な石の数 %d 個",all);
+    DrawFormatString(0, 0, 0xffffff, "才能開花MAXに必要な石の数 平均 %d 個",all);
     DrawString(0,100,"スペースでもう一度計算し直す",0xffffff);
     ScreenFlip();
 }

@@ -5,6 +5,7 @@
 
 int main()
 {
+    std::cout << "1916213_佐藤弘哲" << std::endl;
     char text[50];
     printf("文字列を入力してください\n");
     scanf("%s", text);

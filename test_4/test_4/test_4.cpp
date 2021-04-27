@@ -9,6 +9,7 @@
 
 int main()
 {
+    std::cout << "1916213_佐藤弘哲" << std::endl;
     std::ifstream ifs("data.txt");
     std::string str;
     std::vector<int> num;

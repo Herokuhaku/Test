@@ -2,6 +2,8 @@
 //
 
 #include <iostream>
+#include "common/Vector2.h"
+Int2 a = {0,0};
 
 int main()
 {
